@@ -1,11 +1,20 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <h1>Hello, this is a demo of Astro and Cloudflare Workers</h1>
+  <p>
+    This is a simple page to test the integration of Astro and Cloudflare
+    Workers
+  </p>
+  <p>and using build time and runtime environment variables</p>
+
+  <p>
+    For SSG page example the see the
+    <a href="/ssg-example">SSG page</a>
+  </p>
+  <p>
+    For SSR page example see the <a href="/ssr-example">SSR page</a>
+  </p>
 </Layout>

@@ -1,0 +1,31 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getSecret } from "astro:env/server";
+
+export const prerender = false;
+
+const envGetSecret = getSecret("SECRET_VAR_ONE");
+const envCloudflareAstroLocals = Astro.locals?.runtime?.env?.SECRET_VAR_ONE;
+const envAstroEnv = import.meta.env.SECRET_VAR_ONE;
+---
+
+<Layout>
+  <h1>SSR Example</h1>
+  <p>
+    Runtime environment variable (using import.meta.env): {envAstroEnv}
+  </p>
+
+  <p>
+    Runtime environment variable (using getSecret from astro:env/server): {
+      envGetSecret
+    }
+  </p>
+
+  <p>
+    Runtime environment variable (using Astro.locals.runtime.env): {
+      envCloudflareAstroLocals
+    }
+  </p>
+
+  <a href="/">Back to home</a>
+</Layout>

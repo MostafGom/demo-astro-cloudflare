@@ -4,6 +4,7 @@
     // Update to today's date
     "compatibility_date": "2025-03-25",
     "compatibility_flags": ["nodejs_compat"],
+    "keep_vars": true,
     "assets": {
       "binding": "ASSETS",
       "directory": "./dist"

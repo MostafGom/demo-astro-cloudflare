@@ -1,8 +1,6 @@
 // @ts-check
 import { defineConfig, envField } from "astro/config";
-
 import cloudflare from "@astrojs/cloudflare";
-
 import { loadEnv } from "vite";
 
 const { SECRET_VAR_ONE } = loadEnv(

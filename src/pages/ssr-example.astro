@@ -1,30 +1,36 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { getSecret } from "astro:env/server";
-
+import { getEnv } from "@/helpers/getEnv";
 export const prerender = false;
 
 const envGetSecret = getSecret("SECRET_VAR_ONE");
 const envCloudflareAstroLocals = Astro.locals?.runtime?.env?.SECRET_VAR_ONE;
 const envAstroEnv = import.meta.env.SECRET_VAR_ONE;
+const envHelper = getEnv(Astro);
 ---
 
 <Layout>
   <h1>SSR Example</h1>
   <p>
-    Runtime environment variable (using import.meta.env): {envAstroEnv}
+    Runtime environment variable (using import.meta.env)<br />
+    env variable: {envAstroEnv || "not found"}
   </p>
 
   <p>
-    Runtime environment variable (using getSecret from astro:env/server): {
-      envGetSecret
-    }
+    Runtime environment variable (using getSecret from astro:env/server)<br />
+    env variable: {envGetSecret || "not found"}
   </p>
 
   <p>
-    Runtime environment variable (using Astro.locals.runtime.env): {
-      envCloudflareAstroLocals
-    }
+    Runtime environment variable (using Astro.locals.runtime.env)<br />
+    env variable: {envCloudflareAstroLocals || "not found"}
+  </p>
+
+  <p>
+    Build time environment variable (using getEnv helper this is the same as
+    Astro.locals but moved to a helper function)<br />
+    env variable: {envHelper || "not found"}
   </p>
 
   <a href="/">Back to home</a>

@@ -7,7 +7,7 @@ export const prerender = true;
 const envGetSecret = getSecret("SECRET_VAR_ONE");
 const envAstroEnv = import.meta.env.SECRET_VAR_ONE;
 const envCloudflareAstroLocals = Astro.locals?.runtime?.env?.SECRET_VAR_ONE;
-const envHelper = getEnv(Astro);
+const envHelper = getEnv(Astro).SECRET_VAR_ONE;
 ---
 
 <Layout>

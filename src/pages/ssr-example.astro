@@ -13,6 +13,11 @@ const envHelper = getEnv(Astro).SECRET_VAR_ONE;
 <Layout>
   <h1>SSR Example</h1>
   <p>
+    This is a simple page to test the integration of Astro and Cloudflare
+    Workers
+  </p>
+  <p>and using build time environment variables in SSR mode</p>
+  <p>
     Runtime environment variable (using import.meta.env)<br />
     env variable: {envAstroEnv || "not found"}
   </p>
